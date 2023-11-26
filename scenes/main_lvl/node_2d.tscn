@@ -1,79 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://c6n28eo75d5ue"]
+[gd_scene load_steps=11 format=3 uid="uid://c6n28eo75d5ue"]
 
 [ext_resource type="Script" path="res://scenes/main_lvl/Camera2D.gd" id="1_05a01"]
+[ext_resource type="PackedScene" uid="uid://ds2ygnawjjgt7" path="res://scenes/soldier.tscn" id="3_3m586"]
 [ext_resource type="Texture2D" uid="uid://d1vy8uosbn1fq" path="res://assets/world.png" id="3_5hkj6"]
-[ext_resource type="Texture2D" uid="uid://bnqv4e0pidj50" path="res://assets/basic_soldier.png" id="4_dtvpd"]
 [ext_resource type="Texture2D" uid="uid://buoouex6b2g51" path="res://assets/hq.png" id="5_to5sc"]
 [ext_resource type="Script" path="res://scenes/main_lvl/throne.gd" id="6_aieu5"]
 [ext_resource type="PackedScene" uid="uid://dushec5761vu0" path="res://scenes/tower.tscn" id="7_2236w"]
 [ext_resource type="PackedScene" uid="uid://bfcnxkbpb0tw7" path="res://scenes/platform.tscn" id="8_idcl8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ya684"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vls2j"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnpko"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2k4ta"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_np31p"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7umg"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bdnm"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4lcgv"]
-atlas = ExtResource("4_dtvpd")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_uf7vs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ya684")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vls2j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fnpko")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2k4ta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_np31p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m7umg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0bdnm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4lcgv")
-}],
-"loop": true,
-"name": &"run",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0uqv"]
-size = Vector2(47, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hw78t"]
 atlas = ExtResource("5_to5sc")
@@ -108,23 +41,6 @@ script = ExtResource("1_05a01")
 scale = Vector2(2.245, 2.245)
 texture = ExtResource("3_5hkj6")
 
-[node name="test_unit" type="StaticBody2D" parent="."]
-position = Vector2(321, 232)
-
-[node name="soldier_animation" type="AnimatedSprite2D" parent="test_unit"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_uf7vs")
-animation = &"run"
-frame_progress = 0.593447
-flip_h = true
-
-[node name="soldier_collide" type="CollisionShape2D" parent="test_unit"]
-shape = SubResource("RectangleShape2D_r0uqv")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(37, 38)
-scale = Vector2(3, 3)
-
 [node name="throne" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -150)
 scale = Vector2(3, 3)
@@ -135,13 +51,56 @@ frame_progress = 0.427385
 script = ExtResource("6_aieu5")
 
 [node name="platform_1" parent="." instance=ExtResource("8_idcl8")]
-position = Vector2(-108, 22)
+position = Vector2(-70, 40)
 
 [node name="platform_2" parent="." instance=ExtResource("8_idcl8")]
-position = Vector2(108, -13)
+position = Vector2(2.98023e-06, 4)
+
+[node name="platform_3" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(1, 77)
+
+[node name="platform_4" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(73, 42)
+
+[node name="platform_5" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(144, 4)
+scale = Vector2(1, 1)
+
+[node name="platform_6" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(216, -31)
+
+[node name="platform_7" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(72, -31)
+
+[node name="platform_8" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(144, -67)
+
+[node name="platform_9" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-141, 3.00001)
+
+[node name="platform_10" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-71, -30)
+
+[node name="platform_11" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-1.78814e-06, -68)
+
+[node name="platform_12" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(72, -102)
+
+[node name="platform_13" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-71, -103)
+
+[node name="platform_14" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-143, -67)
+
+[node name="platform_15" parent="." instance=ExtResource("8_idcl8")]
+position = Vector2(-214, -32)
 
 [node name="sec_tower2" parent="." instance=ExtResource("7_2236w")]
 position = Vector2(-340, 177)
 
 [node name="sec_tower3" parent="." instance=ExtResource("7_2236w")]
 position = Vector2(-194, 235)
+
+[node name="test_unit" parent="." instance=ExtResource("3_3m586")]
+position = Vector2(261, 222)

@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ds2ygnawjjgt7"]
+
+[ext_resource type="Texture2D" uid="uid://bnqv4e0pidj50" path="res://assets/basic_soldier.png" id="1_c8so2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya684"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vls2j"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnpko"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k4ta"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np31p"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7umg"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bdnm"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lcgv"]
+atlas = ExtResource("1_c8so2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf7vs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya684")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vls2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnpko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k4ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np31p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7umg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bdnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lcgv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0uqv"]
+size = Vector2(47, 44)
+
+[node name="test_unit" type="Node2D"]
+
+[node name="soldier_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uf7vs")
+animation = &"run"
+frame_progress = 0.673928
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="soldier_collide" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_r0uqv")

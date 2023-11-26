@@ -10,9 +10,11 @@ var initiationPos : Vector2
 
 
 func _ready():
-	anima.play("idle")
 	initiationPos = global_position
+	get_tree().call_group("dropable_1", change_vis())
 
+func change_vis():
+	visible = false
 
 func _process(delta):
 	if dragable:
@@ -24,17 +26,20 @@ func _process(delta):
 			Global.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside:
-				tween.tween_property(self, "position", just_body.position, 0).set_ease(Tween.EASE_OUT)
+				tween.tween_property(self, "position", just_body.position, 0.2).set_ease(Tween.EASE_OUT)
+				anima.play("idle")
 			else:
 				tween.tween_property(self, "global_position", initiationPos, 0.2).set_ease(Tween.EASE_OUT)
 			
 
 
 func _on_area_2d_body_entered(body:StaticBody2D):
-	if body.is_in_group("dropable"):
+	if body.is_in_group("dropable_1"):
 		is_inside = true
 		body.modulate = Color(Color.CORNFLOWER_BLUE, 0.5)
 	just_body = body
+	
+
 
 
 func _on_area_2d_mouse_entered():
@@ -50,5 +55,6 @@ func _on_area_2d_mouse_exited():
 
 
 func _on_area_2d_body_exited(body):
-	if body.is_in_group("dropable"):
+	if body.is_in_group("dropable_1"):
 		is_inside = true
+		body.modulate = Color(Color.AZURE, 0.5)

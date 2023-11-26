@@ -7,6 +7,7 @@ size = Vector2(26.5433, 26.8048)
 
 [node name="platform_1" type="StaticBody2D" groups=["dropable"]]
 rotation = 0.532325
+scale = Vector2(1.1, 1.1)
 skew = 0.514872
 script = ExtResource("1_3u8j7")
 
