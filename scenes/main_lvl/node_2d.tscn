@@ -1,0 +1,269 @@
+[gd_scene load_steps=33 format=3 uid="uid://c6n28eo75d5ue"]
+
+[ext_resource type="Script" path="res://scenes/main_lvl/Camera2D.gd" id="1_05a01"]
+[ext_resource type="Script" path="res://scenes/main_lvl/first_unit.gd" id="2_4i2pp"]
+[ext_resource type="Texture2D" uid="uid://53cjvg303c11" path="res://assets/defense1.png" id="2_vfnmh"]
+[ext_resource type="Texture2D" uid="uid://d1vy8uosbn1fq" path="res://assets/world.png" id="3_5hkj6"]
+[ext_resource type="Texture2D" uid="uid://bnqv4e0pidj50" path="res://assets/basic_soldier.png" id="4_dtvpd"]
+[ext_resource type="Texture2D" uid="uid://buoouex6b2g51" path="res://assets/hq.png" id="5_to5sc"]
+[ext_resource type="Script" path="res://scenes/main_lvl/throne.gd" id="6_aieu5"]
+[ext_resource type="Script" path="res://scenes/main_lvl/platform_1.gd" id="7_lchjl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51jv3"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rth8f"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6xta"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3n4d"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4brnx"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wa7u"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdqrd"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuy24"]
+atlas = ExtResource("2_vfnmh")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3d4fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51jv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rth8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6xta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3n4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4brnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wa7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdqrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuy24")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3ou5"]
+size = Vector2(59.25, 61.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya684"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vls2j"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnpko"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k4ta"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np31p"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7umg"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bdnm"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lcgv"]
+atlas = ExtResource("4_dtvpd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf7vs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya684")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vls2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnpko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k4ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np31p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7umg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bdnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lcgv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0uqv"]
+size = Vector2(47, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw78t"]
+atlas = ExtResource("5_to5sc")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8s2l"]
+atlas = ExtResource("5_to5sc")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ie60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw78t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8s2l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfnfb"]
+size = Vector2(26.5433, 26.8048)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = -3.14159
+ignore_rotation = false
+rotation_smoothing_enabled = true
+script = ExtResource("1_05a01")
+
+[node name="mapo" type="Sprite2D" parent="."]
+scale = Vector2(2.245, 2.245)
+texture = ExtResource("3_5hkj6")
+
+[node name="sec_tower2" type="Node2D" parent="."]
+position = Vector2(-380, 202)
+script = ExtResource("2_4i2pp")
+
+[node name="tower_animation" type="AnimatedSprite2D" parent="sec_tower2"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3d4fj")
+animation = &"idle"
+frame = 7
+frame_progress = 0.67557
+
+[node name="Area2D" type="Area2D" parent="sec_tower2"]
+
+[node name="tower_collision" type="CollisionShape2D" parent="sec_tower2/Area2D"]
+shape = SubResource("RectangleShape2D_h3ou5")
+
+[node name="first_tower" type="Node2D" parent="."]
+position = Vector2(-266, 232)
+script = ExtResource("2_4i2pp")
+
+[node name="tower_animation" type="AnimatedSprite2D" parent="first_tower"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3d4fj")
+animation = &"idle"
+frame = 7
+frame_progress = 0.67557
+
+[node name="Area2D" type="Area2D" parent="first_tower"]
+
+[node name="tower_collision" type="CollisionShape2D" parent="first_tower/Area2D"]
+shape = SubResource("RectangleShape2D_h3ou5")
+
+[node name="test_unit" type="StaticBody2D" parent="."]
+position = Vector2(321, 232)
+
+[node name="soldier_animation" type="AnimatedSprite2D" parent="test_unit"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uf7vs")
+animation = &"run"
+frame_progress = 0.593447
+flip_h = true
+
+[node name="soldier_collide" type="CollisionShape2D" parent="test_unit"]
+shape = SubResource("RectangleShape2D_r0uqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 38)
+scale = Vector2(3, 3)
+
+[node name="throne" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -150)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6ie60")
+animation = &"idle"
+frame = 1
+frame_progress = 0.427385
+script = ExtResource("6_aieu5")
+
+[node name="platform_1" type="StaticBody2D" parent="." groups=["dropable"]]
+position = Vector2(-107, 23)
+rotation = -0.523599
+skew = -0.523599
+script = ExtResource("7_lchjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform_1"]
+position = Vector2(1.24722, 1.25832)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_nfnfb")
+
+[node name="ColorRect" type="ColorRect" parent="platform_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0526
+offset_top = -19.0526
+offset_right = 20.9474
+offset_bottom = 20.9474
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.301961)
+
+[connection signal="body_entered" from="sec_tower2/Area2D" to="sec_tower2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="sec_tower2/Area2D" to="sec_tower2" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="sec_tower2/Area2D" to="sec_tower2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="sec_tower2/Area2D" to="sec_tower2" method="_on_area_2d_mouse_exited"]
