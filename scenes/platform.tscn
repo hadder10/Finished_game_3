@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfcnxkbpb0tw7"]
+
+[ext_resource type="Script" path="res://scenes/main_lvl/platform_1.gd" id="1_3u8j7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfnfb"]
+size = Vector2(26.5433, 26.8048)
+
+[node name="platform_1" type="StaticBody2D" groups=["dropable"]]
+rotation = 0.532325
+skew = 0.514872
+script = ExtResource("1_3u8j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_nfnfb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.301961)

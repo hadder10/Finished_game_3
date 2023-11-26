@@ -9,13 +9,11 @@ var initiationPos : Vector2
 
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	anima.play("idle")
 	initiationPos = global_position
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if dragable:
 		if Input.is_action_just_pressed("click"):
@@ -26,7 +24,7 @@ func _process(delta):
 			Global.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside:
-				tween.tween_property(self, "position", just_body.position, 0.2).set_ease(Tween.EASE_OUT)
+				tween.tween_property(self, "position", just_body.position, 0).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self, "global_position", initiationPos, 0.2).set_ease(Tween.EASE_OUT)
 			
